@@ -13,5 +13,4 @@ public interface CollectionService {
     Set<String> uniqueWord(String sentence);
 
     List<Integer> quantityWord(String sentence);
-
 }

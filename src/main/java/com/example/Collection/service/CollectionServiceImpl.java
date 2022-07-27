@@ -5,14 +5,16 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class CollectionServiceImpl implements CollectionService {
+public class CollectionServiceImpl implements CollectionService{
     List<Integer> numList = new ArrayList<>(Arrays.asList());
 
+    @Override
     public List<Integer> add(Integer num) {
         numList.add(num);
         return numList;
     }
 
+    @Override
     public List<Integer> oddNumber() {
         List<Integer> oddNumber = new ArrayList<>(Arrays.asList());
         for (int i = 0; i < numList.size(); i++) {
@@ -23,6 +25,7 @@ public class CollectionServiceImpl implements CollectionService {
         return oddNumber;
     }
 
+    @Override
     public Set<Integer> evenNumber() {
         Set<Integer> evenNumber = new HashSet<>(Arrays.asList());
         for (int i = 0; i < numList.size(); i++) {
@@ -33,6 +36,7 @@ public class CollectionServiceImpl implements CollectionService {
         return evenNumber;
     }
 
+    @Override
     public Set<String> uniqueWord(String sentence) {
         List<String> wordList = new ArrayList<>(Arrays.asList(sentence.split(" ")));
         Set<String> uniqueWords = new HashSet<>();
@@ -44,6 +48,7 @@ public class CollectionServiceImpl implements CollectionService {
         return uniqueWords;
     }
 
+    @Override
     public List<Integer> quantityWord(String sentence) {
         List<String> wordList = new ArrayList<>(Arrays.asList(sentence.split(" ")));
         Set<String> uniqueWords = new HashSet<>(wordList);
@@ -55,6 +60,5 @@ public class CollectionServiceImpl implements CollectionService {
         }
         return uniqueNumbers;
     }
-
 
 }
